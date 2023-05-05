@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taj</title>
+    <style>
+        input{
+            width: 14pt;
+            height: 14pt;
+            width: 1.5em;
+            text-align: center;
+
+        }
+        input:focus{
+            border: 3px solid red;
+            background-color: #fbbab7;
+            font-size: 1em;
+        }
+    </style>
+    <script>
+        var mehet = false;
+        function lenyomva(objektum){
+            if(objektum.key<"0" || objektum.key>"9" && objektum.key!="Backspace"){
+                objektum.preventDefault();
+                mehet = false;
+            }else{
+                mehet = true;
+            }
+        }
+        function felengedve(objektum){
+            var bevitelielem = objektum.target;
+            if(mehet){
+                if(bevitelielem.id=="taj1"){
+                    document.getElementById("taj2").focus();
+                }
+                //itt kell a kovetkezore ugrai
+            }
+
+        }
+    </script>
+</head>
+<body>
+    Taj:
+    <input id="taj1" type="text" size="1" maxlength="1" onkeydown="lenyomva(event)"; onkeyup="felengedve(event);"/>
+    <input id="taj2" type="text" size="1" maxlength="1" onkeydown="lenyomva(event)"; onkeyup="felengedve(event); "/>
+    <input id="taj3" type="text" size="1" maxlength="1" onkeydown="lenyomva(event)"; onkeyup="felengedve(event); "/>
+    <input id="taj4" type="text" size="1" maxlength="1" onkeydown="lenyomva(event)" onkeyup="felengedve(event)"/>
+    <input id="taj5" type="text" size="1" maxlength="1" onkeydown="lenyomva(event)"; onkeyup="felengedve(event)";/>
+    <input id="taj6" type="text" size="1" maxlength="1" onkeydown="lenyomva(event)"; onkeyup="felengedve(event)";/>
+    <input id="taj7" type="text" size="1" maxlength="1" onkeydown="lenyomva(event)"; onkeyup="felengedve(event)";/>
+    <input id="taj8" type="text" size="1" maxlength="1" onkeydown="lenyomva(event)"; onkeyup="felengedve(event)";/>
+    <input id="taj9" type="text" size="1" maxlength="1" onkeydown="lenyomva(event)"; onkeyup="felengedve(event)";/>
+</body>
+</html>
